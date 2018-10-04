@@ -1,0 +1,7 @@
+//18031J0027
+Activity:4
+code-1:N
+code-2:1
+code-3:log(N)
+code-4:N^2
+code-5:N^2
