@@ -1,44 +1,22 @@
-//18031J0027
-quick-find:
-id[]= 0 1 2 3 4 5 6 7 8 9
-9-0   0 1 2 3 4 5 6 7 8 0
-3-4   0 1 2 4 4 5 6 7 8 0
-5-8   0 1 2 4 4 8 6 7 8 0
-7-2   0 1 2 4 4 8 6 2 8 0
-2-1   0 1 1 4 4 8 6 2 8 0
-5-7   0 1 1 4 4 2 6 2 8 0
-0-3   4 1 1 4 4 2 6 2 8 0
-4-2   4 1 1 4 1 2 6 2 8 0
+//18031J0027(module4)
+//Activity4:
+input:it was - the best - of times - - - it was - the - -
+push:it
+push:was(present:it was)
+pop:was(present:it)
+push:the
+push:best(present:the best)
+pop:best(present: it the)
+push:of
+push:times(present:it the of times)
+pop:times
+pop:of
+pop:the(present:it)
+push:it
+push:was(present:it it was)
+pop:was(present:it it)
+push:the(present:it it the)
+pop:the
+pop:it(present:it)
 
-Quick-union:
-id[]= 0 1 2 3 4 5 6 7 8 9
-9-0   0 1 2 3 4 5 6 7 8 9
-3-4   0 1 2 4 4 5 6 7 8 9
-5-8   0 1 2 4 4 8 6 7 8 9
-7-2   0 1 2 4 4 8 6 2 8 9
-2-1   0 2 2 4 4 8 6 2 8 9
-5-7   0 2 2 4 4 2 6 2 8 9
-0-3   4 2 2 4 4 2 6 2 8 9
-4-2   4 2 2 4 2 2 6 2 8 9
-
-weighted quick-union:
-id[]= 0 1 2 3 4 5 6 7 8 9
-9-0   9 1 2 3 4 5 6 7 8 9
-3-4   9 1 2 3 3 5 6 7 8 9 
-5-8   9 1 2 3 3 5 6 7 5 9
-7-2   9 1 7 3 3 5 6 7 5 9 
-2-1   9 7 7 3 3 5 6 7 5 9
-5-7   9 7 7 3 3 7 6 7 5 9
-0-3   3 7 7 3 3 7 6 7 5 9
-4-2   3 7 7 3 7 7 6 7 5 9
-
-weighted quick-union path compression:
-id[]= 0 1 2 3 4 5 6 7 8 9
-9-0   9 1 2 3 4 5 6 7 8 9
-3-4   9 1 2 3 3 5 6 7 8 9
-5-8   9 1 2 3 3 5 6 7 5 9
-7-2   9 1 7 3 3 5 6 7 5 9
-2-1   9 7 7 3 3 5 6 7 5 9
-5-7   9 7 7 3 3 7 6 7 5 9
-0-3   3 7 7 3 3 7 6 7 5 9
-4-2   3 7 7 3 7 7 6 7 5 9
+output:was best times of the was the it
