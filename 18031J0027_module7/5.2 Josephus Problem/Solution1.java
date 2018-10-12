@@ -1,31 +1,37 @@
 import java.io.*;
 import java.util.Scanner;
-class Node<T> {
-    T value;
-    Node<T> link;
+class Node
+{
+    int value;
+    Node link;
 }
 
-class Stack<T> {
-    Node<T> top;
-    public Stack() {
+class Stack
+{
+    Node top;
+    public Stack()
+    {
         top = null;
     }
-    public void push(T item) {
-        Node<T> n = new Node<T>();
+    public void push(int item) 
+    {
+        Node n = new Node();
         n.value = item;
         n.link = top;
         top = n;
     }
-    public T pop() {
-        T item;
+    public int pop()
+    {
+       int item;
         item = top.value;
-        Node<T> n = top;
+        Node n = top;
         n = null;
         top = top.link;
         return item;
     }
-    public void display() {
-        Node<T> n = top;
+    public void display()
+    {
+        Node n = top;
         System.out.print("(top)");
         while (n != null) {
             System.out.print(" ->" + n.value);
@@ -35,14 +41,15 @@ class Stack<T> {
     }
 }
 
-// Queue---------------------------
-class Queue<T> {
-    Node<T> front, rear;
-    Stack<T> s1 = new Stack<T>();
-    Stack<T> s2 = new Stack<T>();
+class Queue 
+{
+    Node front, rear;
+    Stack s1 = new Stack();
+    Stack s2 = new Stack();
     public Queue() {
     }
-    public void add(T item) {
+    public void add(int item)
+    {
         while (s2.top != null)
             s1.push(s2.pop());
         s1.push(item);
@@ -51,13 +58,15 @@ class Queue<T> {
             s2.push(s1.pop());
         front = s2.top;
     }
-    public T remove() {
-        T item = s2.pop();
+    public int remove()
+    {
+        int item = s2.pop();
         front = s2.top;
         return item;
     }
-    public void display() {
-        Node<T> n = s2.top;
+    public void display()
+    {
+        Node n = s2.top;
         System.out.print("(front)");
         while (n != null) {
             System.out.print(" <-" + n.value);
@@ -67,17 +76,19 @@ class Queue<T> {
     }
 }
 
-// Josephus Problem-------------------
-public class Solution1 {
-    public static void main(String[] args) throws IOException {
+
+public class Solution1
+{
+    public static void main(String[] args) //throws IOException
+    {
         
         int n, m, i;
         Scanner sc=new Scanner(System.in);
         String s=sc.nextLine();
         while(sc.hasNext())
         {
-        Queue<Integer> q = new Queue<Integer>();
-        Queue<Integer> q1 = new Queue<Integer>();
+        Queue q = new Queue();
+        Queue q1 = new Queue();
         String a=sc.nextLine();
     	int g=0;
     	String[] b=a.split(" ");
@@ -85,7 +96,7 @@ public class Solution1 {
     	m=Integer.parseInt(b[1]);
         for (i = 0; i < n; i++)
             q.add(i);
-        Node<Integer> node = q.front;
+        Node node = q.front;
         int l, k = 0;
         while (k != n - 1) {
             for (i = 0; i< m-1; i++)
