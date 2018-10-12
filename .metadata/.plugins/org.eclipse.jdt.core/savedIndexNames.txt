@@ -1,0 +1,3 @@
+INDEX VERSION 1.126+D:\ADS-programs\practice\.metadata\.plugins\org.eclipse.jdt.core
+4000194226.index
+6324126.index

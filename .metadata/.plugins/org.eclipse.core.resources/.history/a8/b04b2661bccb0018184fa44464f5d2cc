@@ -1,0 +1,19 @@
+public class Deque<item> implements Iterable<item>
+{
+	Deque()
+	{
+		
+	}
+}
+
+
+
+
+
+
+
+
+class Solution
+{
+	
+}

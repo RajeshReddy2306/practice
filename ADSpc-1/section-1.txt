@@ -1,0 +1,13 @@
+//18031J0027
+section-1:
+1.output:empty
+  complexity:1
+2.cricket is a hobby of playing mentor
+3.a,d
+4.
+5.
+6.N*log(N)
+7.N*log(N)
+8.1
+9.N^2
+10.1111111111

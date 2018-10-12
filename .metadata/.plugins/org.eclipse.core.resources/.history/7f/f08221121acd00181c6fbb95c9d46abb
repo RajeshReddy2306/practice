@@ -1,0 +1,10 @@
+import java.util.LinkedList;
+
+
+public class Dequeue {
+LinkedList ll=new LinkedList();
+	public static void main(String[] args) {
+		
+	}
+
+}

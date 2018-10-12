@@ -1,0 +1,39 @@
+
+public class Queuearrays {
+int size;
+	int a[]=new int[10];
+	int front=-1,rear=-1;
+	void enqueue(int x)
+	{
+		if(rear==size-1)
+		{
+			System.out.println("queue is full");
+		}
+		else
+		{
+			a[++rear]=x;
+		}
+		
+	}
+	int dequeue()
+	{
+		return a[++front];
+	}
+	void display()
+	{
+		for(int i=front;i<rear;i++)
+		{
+			System.out.println(a[i]);
+		}
+	}
+	public static void main(String[] args) {
+		Queuearrays qa=new Queuearrays();
+		qa.enqueue(10);
+		qa.enqueue(20);
+		qa.enqueue(30);
+		qa.display();
+		qa.dequeue();
+		qa.display();
+	}
+
+}

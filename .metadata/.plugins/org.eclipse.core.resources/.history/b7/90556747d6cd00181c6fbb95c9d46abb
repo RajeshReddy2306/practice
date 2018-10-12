@@ -1,0 +1,70 @@
+import java.util.*;
+class Node 
+{
+ int data;
+ Node next;
+
+ Node(int data) 
+ {
+    this.data = data;
+    next=null;
+}
+
+ void displayNode() 
+ {
+    System.out.print(data+" ");
+    }
+}
+ class steque
+ {
+	LinkedList ll=new LinkedList();
+	 Node first = null;
+
+	 void push(int data) 
+	 {
+	    Node n = new Node(data);
+	    n.next = first;
+	    first = n;
+	    
+	}
+
+	public  Node pop() 
+	{
+	    Node temp = first;
+	    first = first.next;
+	    return temp;
+	}
+	public void enqueue(int data)
+	{
+		LinkedList l=new LinkedList();
+		l.addLast(data);
+	}
+	public String display()
+	{
+
+		if (ll.isEmpty())
+		{
+		
+			return "[]";
+		}
+		String st = "[" + l.get(0);
+		for (int i = 1; i < l.size(); i++) 
+		{
+			st = st + ", " + l.get(i);
+		}
+		st = st + "]";
+		
+		return st;
+	}
+ }
+ class Solution
+ {
+	 public static void main(String args[])
+	 {
+		 Scanner sc=new Scanner(System.in);
+		 LinkedList ll=new LinkedList();
+		 int t=sc.nextInt();
+		 ll.push();
+		 ll.
+	 }
+ }

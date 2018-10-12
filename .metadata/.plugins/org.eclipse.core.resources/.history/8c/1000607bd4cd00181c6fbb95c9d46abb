@@ -1,0 +1,35 @@
+class Node 
+{
+ int data;
+ Node next;
+
+ Node(int data) 
+ {
+    this.data = data;
+    next=null;
+}
+
+ void displayNode() 
+ {
+    System.out.print(data+" ");
+    }
+}
+ class steque
+ {
+	
+	 Node first = null;
+
+	 void push(int data) 
+	 {
+	    Node n = new Node(data);
+	    n.next = first;
+	    first = n;
+	    
+	}
+
+	public  Node pop() 
+	{
+	    Node temp = first;
+	    first = first.next;
+	    return temp;
+	}

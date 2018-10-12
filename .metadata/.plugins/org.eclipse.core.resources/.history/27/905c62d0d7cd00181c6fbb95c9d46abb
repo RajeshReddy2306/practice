@@ -1,0 +1,95 @@
+import java.util.*;
+class Node 
+{
+ int data;
+ Node next;
+
+ Node(int data) 
+ {
+    this.data = data;
+    next=null;
+}
+
+ void displayNode() 
+ {
+    System.out.print(data+" ");
+    }
+}
+ class steque
+ {
+	LinkedList<Integer> ll=new LinkedList<Integer>();
+	 Node first = null;
+
+	 void push(int data) 
+	 {
+	    Node n = new Node(data);
+	    n.next = first;
+	    first = n;
+	    
+	}
+
+	public  Node pop() 
+	{
+	    Node temp = first;
+	    first = first.next;
+	    return temp;
+	}
+	public void enqueue(int data)
+	{
+		
+		ll.addLast(data);
+	}
+	public String display()
+	{
+
+		if (ll.isEmpty())
+		{
+		
+			return "[]";
+		}
+		String st = "[" + ll.get(0);
+		for (int i = 1; i < ll.size(); i++) 
+		{
+			st = st + ", " + ll.get(i);
+		}
+		st = st + "]";
+		
+		return st;
+	}
+ }
+ class Solution
+ {
+	 public static void main(String args[])
+	 {
+		 int n, i, data;
+			String s;
+			Scanner scan = new Scanner(System.in);
+			n = scan.nextInt();
+			steque d = new steque();
+			while (scan.hasNext())
+			{
+				s = scan.nextLine();
+			
+				String[] s1 = s.split(" ");
+				//int s2=Integer.parseInt(s1[0]);
+				String op=scan.nextLine();
+				switch (op) 
+				{
+				
+				
+				case "push":
+					data = Integer.parseInt(s1[1]);
+					d.push(data);
+					System.out.println(d.ll);
+					break;
+				case "pop":
+					d.pop();
+					System.out.println(d.display());
+					break;
+				case "enqueue":
+					d.enqueue(data);
+					System.out.println(d.display());
+					break;
+				}	
+	 }
+ }

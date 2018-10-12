@@ -1,0 +1,86 @@
+//package module7;
+
+public class Node2 {
+	int data;
+	Node2 next;
+	Node2(int data)
+	{
+		this.data=data;
+		this.next=null;
+	}
+
+}
+//package module7;
+
+public class Operations {
+	Node2 head;
+	Operations()
+	{
+		head=null;
+	}
+	public void push(int ele)
+	{
+		Node2 n=new Node2(ele);
+		if(head==null)
+		{
+			head=n;
+		}
+		else
+		{
+			n.next=head;
+			head=n;
+		}
+		display();
+	}
+	public void enqueue(int ele)
+	{
+		Node2 n=new Node2(ele);
+		if(head==null)
+		{
+			head=n;
+		}
+		if(head.next==null)
+		{
+			head.next=n;
+		}
+		else
+		{
+			Node2 temp=head;
+			while(temp.next!=null)
+			{
+				temp=temp.next;
+			}
+			temp.next=n;
+		}
+		display();
+	}
+	public int pop()
+	{
+		if(head==null)
+		{
+		System.out.println("nothing to delete");
+		}
+		if(head.next==null)
+		{
+			head=null;
+		}
+		else
+		{
+			head=head.next;
+		}
+		display();
+		return 0;
+	}
+	public void display()
+   	{
+		Node2 temp=head;
+		while(temp!=null)
+		{
+			System.out.print(temp.data);
+			
+			temp=temp.next;
+		}
+		System.out.print("\n");
+	}
+}
+

@@ -1,0 +1,83 @@
+public class Node {
+	int data;
+	Node next;
+	Node(int data)
+	{
+		this.data=data;
+		this.next=null;
+	}
+
+}
+
+
+public class Operations1 {
+	Node head;
+	Operations1()
+	{
+		head=null;
+	}
+	public void push(int ele)
+	{
+		Node n=new Node(ele);
+		if(head==null)
+		{
+			head=n;
+		}
+		else
+		{
+			n.next=head;
+			head=n;
+		}
+		display();
+	}
+	public void enqueue(int ele)
+	{
+		Node n=new Node(ele);
+		if(head==null)
+		{
+			head=n;
+		}
+		if(head.next==null)
+		{
+			head.next=n;
+		}
+		else
+		{
+			Node temp=head;
+			while(temp.next!=null)
+			{
+				temp=temp.next;
+			}
+			temp.next=n;
+		}
+		display();
+	}
+	public int pop()
+	{
+		if(head==null)
+		{
+		System.out.println("nothing to delete");
+		}
+		if(head.next==null)
+		{
+			head=null;
+		}
+		else
+		{
+			head=head.next;
+		}
+		display();
+		return 0;
+	}
+	public void display()
+   	{
+		Node temp=head;
+		while(temp!=null)
+		{
+			System.out.print(temp.data);
+			
+			temp=temp.next;
+		}
+		System.out.print("\n");
+	}
+}

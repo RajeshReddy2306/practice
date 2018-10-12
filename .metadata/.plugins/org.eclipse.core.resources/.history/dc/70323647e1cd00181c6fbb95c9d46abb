@@ -1,0 +1,74 @@
+import java.util.*;
+
+ class steque
+ {
+	LinkedList<Integer> ll=new LinkedList<Integer>();
+	
+
+	 void push(int data) 
+	 {
+	   ll.add(data);
+	}
+
+	  void pop() 
+	{
+	   ll.remove();
+	}
+	public void enqueue(int data)
+	{
+		
+		ll.addLast(data);
+	}
+	 void display()
+	{
+		
+		if (ll.isEmpty())
+		{
+		System.out.println("enqueue is empty");
+		}
+		else
+		{
+			System.out.println("full");
+		}
+			
+			
+	}
+		}
+ class Solution 
+ {
+	 public static void main(String args[])
+	 {
+		// TODO Auto-generated method stub
+			int n, i, data;
+			String s;
+			Scanner scan = new Scanner(System.in);
+			n = scan.nextInt();
+			steque st = new steque();
+			while (scan.hasNext())
+			{
+				s = scan.nextLine();
+			String input=scan.next();
+				String[] s1 = s.split(" ");
+				
+				switch (s1[0]) 
+				{
+				
+				case "push":
+					data = Integer.parseInt(s1[1]);
+					st.push(data);
+					System.out.println(st.ll+",");
+					break;
+				case "enqueue":
+					data = Integer.parseInt(s1[1]);
+					st.enqueue(data);
+					System.out.println(st.ll);
+					break;
+				case "pop":
+					st.pop();
+					System.out.println(st.display());
+					break;
+				
+				}
+			}	}
+	 }
+		

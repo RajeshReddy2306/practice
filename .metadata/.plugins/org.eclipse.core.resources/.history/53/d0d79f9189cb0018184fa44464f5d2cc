@@ -1,0 +1,66 @@
+class Node
+{
+	int data;
+	Node next;
+	public Node(int data)
+	{
+		this.data=data;
+		next=null;
+	}
+	public void displayNode() {
+		System.out.print(data+"");
+		
+	}
+	
+}
+class QueueLinkedlist
+{
+	Node first;
+	public void insert(int i)
+	{
+		Node n=new Node(i);
+		if(first==null)
+		{
+			first=n;
+			return;
+		}
+		Node temp=first;
+		while(temp.next!=null)
+		{
+			temp=temp.next;
+		}
+		temp.next=n;
+	}
+	public Node remove()
+	{
+		Node temp=first;
+		first=first.next;
+		return temp;
+	}
+	public void display()
+	{
+		Node temp=first;
+		while(temp!=null)
+		{
+			temp.displayNode();
+			temp=temp.next;
+		}
+	}
+
+
+
+public static void main(String[] args) {
+		
+QueueLinkedlist qll=new QueueLinkedlist();
+qll.insert(1);
+qll.insert(2);
+qll.insert(3);
+qll.insert(4);
+qll.insert(5);
+qll.display();
+qll.remove();
+qll.remove();
+qll.display();
+	}
+
+}
