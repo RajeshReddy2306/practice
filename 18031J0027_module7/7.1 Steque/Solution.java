@@ -1,54 +1,129 @@
 import java.util.*;
-
- class steque
- {
-	LinkedList<Integer> ll=new LinkedList<Integer>();
-	
-
-	 void push(int data) 
-	 {
-	   ll.add(data);
+ class Node2 {
+	int data;
+	Node2 next;
+	Node2(int data)
+	{
+		this.data=data;
+		this.next=null;
 	}
 
-	public  void pop() 
-	{
-	  ll.remove();
-	}
-	public void enqueue(int data)
-	{
-		
-		ll.addLast(data);
-	}
-	public String display()
-	{
+}
 
-		if (ll.isEmpty())
+
+ class Operations{
+	Node2 head;
+	Operations()
+	{
+		head=null;
+	}
+	public void push(int ele)
+	{
+		Node2 n=new Node2(ele);
+		if(head==null)
 		{
-		
-			return "[]";
+			head=n;
 		}
-		String st = "[" + ll.get(0);
-		for (int i = 1; i < ll.size(); i++) 
+		else
 		{
-			st = st + ", " + ll.get(i);
+			n.next=head;
+			head=n;
 		}
-		st = st + "]";
-		
-		return st;
+		display();
 	}
- }
- class Solution
- {
-	 public static void main(String args[])
-	 {
-		 int n, i, data;
-			String s;
-			Scanner scan = new Scanner(System.in);
-			n = scan.nextInt();
-			data=scan.nextInt();
-			steque d = new steque();
-			d.push(data);
-			d.enqueue(data);
-			d.pop();
-			System.out.println(d.display());		
-	 }}
+	public void enqueue(int ele)
+	{
+		Node2 n=new Node2(ele);
+		if(head==null)
+		{
+			head=n;
+		}
+		if(head.next==null)
+		{
+			head.next=n;
+		}
+		else
+		{
+			Node2 temp=head;
+			while(temp.next!=null)
+			{
+				temp=temp.next;
+			}
+			temp.next=n;
+		}
+		display();
+	}
+	public int pop()
+	{
+		if(head==null)
+		{
+		System.out.println("nothing to delete");
+		}
+		if(head.next==null)
+		{
+			head=null;
+		}
+		else
+		{
+			head=head.next;
+		}
+		display();
+		return 0;
+	}
+	public void display()
+   	{
+		Node2 temp=head;
+		while(temp!=null)
+		{
+			System.out.print(temp.data);
+			
+			temp=temp.next;
+		}
+		System.out.print("\n");
+	}
+}
+
+
+
+public class Solution {
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		String element1 = null,element2 = null;
+		Operations o=new Operations();
+		int n=sc.nextInt();
+		for(int i=0;i<n;i++)
+		{
+		while(sc.hasNext())
+		{
+			String s=sc.nextLine();
+			if(s==" ")
+			break;
+			String[] str=s.split(" ");
+			element1=str[0];
+			int num=0;
+			if(str.length>1)
+			{
+				element2=str[1];
+			
+			num=Integer.parseInt(element2);
+			}
+			switch(element1)
+			{
+			case "push":o.push(num);
+				break;
+			case "pop":o.pop();
+				break;
+			case "enqueue":o.enqueue(num);
+			break;
+			}
+		
+		}
+		}
+		
+	}
+
+}
+
+
