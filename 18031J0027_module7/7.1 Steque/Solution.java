@@ -48,7 +48,7 @@ import java.util.*;
 			data=scan.nextInt();
 			steque d = new steque();
 			d.push(data);
-			d.pop();
 			d.enqueue(data);
+			d.pop();
 			System.out.println(d.display());		
 	 }}
