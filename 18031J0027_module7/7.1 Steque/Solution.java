@@ -9,8 +9,6 @@ import java.util.*;
 	}
 
 }
-
-
  class Operations{
 	Node2 head;
 	Operations()
@@ -75,7 +73,7 @@ import java.util.*;
 		Node2 temp=head;
 		while(temp!=null)
 		{
-			System.out.print(temp.data);
+			System.out.print(temp.data+",");
 			
 			temp=temp.next;
 		}
@@ -111,11 +109,14 @@ public class Solution {
 			}
 			switch(element1)
 			{
-			case "push":o.push(num);
+			case "push":
+				o.push(num);
 				break;
-			case "pop":o.pop();
+			case "pop":
+				o.pop();
 				break;
-			case "enqueue":o.enqueue(num);
+			case "enqueue":
+				o.enqueue(num);
 			break;
 			}
 		
